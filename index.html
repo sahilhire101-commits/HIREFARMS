@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html>
-
 <head>
 
 <title>Hire Farms</title>
-
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
@@ -12,30 +10,31 @@
 body{
 margin:0;
 font-family:Arial;
-background:#f6f6f6;
+background:#f5f5f5;
 }
 
 /* HEADER */
 
 header{
 background:#2e7d32;
+color:white;
 padding:15px;
 display:flex;
-align-items:center;
 justify-content:space-between;
-color:white;
+align-items:center;
+flex-wrap:wrap;
 }
 
 .logo{
-font-size:24px;
+font-size:22px;
 font-weight:bold;
 }
 
 .search{
-width:40%;
-padding:10px;
-border:none;
+padding:8px;
 border-radius:5px;
+border:none;
+width:250px;
 }
 
 .cart{
@@ -44,46 +43,48 @@ padding:10px 15px;
 border-radius:5px;
 }
 
-/* LAYOUT */
+/* HERO */
 
-.container{
-display:flex;
-}
-
-/* SIDEBAR */
-
-.sidebar{
-width:220px;
-background:white;
-height:100vh;
-padding:20px;
-box-shadow:2px 0 10px rgba(0,0,0,0.1);
-}
-
-.sidebar h3{
-margin-top:0;
-}
-
-.sidebar a{
-display:block;
-padding:10px;
-text-decoration:none;
-color:black;
-border-radius:5px;
-}
-
-.sidebar a:hover{
+.hero{
 background:#e8f5e9;
+padding:60px 20px;
+text-align:center;
+}
+
+.hero h1{
+color:#2e7d32;
+margin:0;
+}
+
+.hero p{
+color:#2e7d32;
+}
+
+/* CATEGORY BAR */
+
+.categories{
+display:flex;
+gap:10px;
+overflow:auto;
+background:white;
+padding:10px;
+}
+
+.categories button{
+padding:8px 15px;
+border:none;
+border-radius:20px;
+background:#f0f0f0;
+cursor:pointer;
 }
 
 /* PRODUCTS */
 
 .products{
-flex:1;
-padding:30px;
+padding:20px;
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:25px;
+gap:20px;
 }
 
 .card{
@@ -92,11 +93,6 @@ padding:15px;
 border-radius:10px;
 box-shadow:0 4px 10px rgba(0,0,0,0.1);
 text-align:center;
-transition:0.3s;
-}
-
-.card:hover{
-transform:translateY(-5px);
 }
 
 .card img{
@@ -119,26 +115,10 @@ margin:5px;
 button{
 background:#4caf50;
 border:none;
-padding:10px 15px;
+padding:10px;
 color:white;
 border-radius:5px;
 cursor:pointer;
-}
-
-/* HERO */
-
-.hero{
-background:#e8f5e9;
-padding:40px;
-text-align:center;
-}
-
-.hero h1{
-color:#2e7d32;
-}
-
-.hero p{
-color:#2e7d32;
 }
 
 /* CHECKOUT */
@@ -162,6 +142,7 @@ background:#2e7d32;
 color:white;
 text-align:center;
 padding:20px;
+margin-top:40px;
 }
 
 </style>
@@ -185,159 +166,107 @@ Cart: <span id="cart-count">0</span>
 <section class="hero">
 
 <h1>Fresh From Hire Farms</h1>
-
 <p>Farm Fresh Vegetables Delivered To Your Home</p>
 
 </section>
 
-<div class="container">
+<div class="categories">
 
-<!-- SIDEBAR -->
-
-<div class="sidebar">
-
-<h3>Categories</h3>
-
-<a href="#">Grains</a>
-
-<a href="#">Vegetables</a>
-
-<a href="#">Fruits</a>
-
-<a href="#">Dairy</a>
+<button>Grains</button>
+<button>Vegetables</button>
+<button>Fruits</button>
+<button>Dairy</button>
 
 </div>
-
-<!-- PRODUCTS -->
 
 <div class="products">
 
 <div class="card">
-
 <img src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Wheat_close-up.JPG">
-
 <h3>Wheat</h3>
-
 <p class="price">₹35/kg</p>
-
 <input type="number" id="wheat" class="qty" value="1">
-
 <button onclick="addToCart('Wheat',35,'wheat')">Add</button>
-
 </div>
 
 <div class="card">
-
 <img src="https://upload.wikimedia.org/wikipedia/commons/8/88/Bright_red_tomato_and_cross_section02.jpg">
-
 <h3>Tomato</h3>
-
 <p class="price">₹30/kg</p>
-
 <input type="number" id="tomato" class="qty" value="1">
-
 <button onclick="addToCart('Tomato',30,'tomato')">Add</button>
-
 </div>
 
 <div class="card">
-
 <img src="https://upload.wikimedia.org/wikipedia/commons/1/15/Red_onion.jpg">
-
 <h3>Onion</h3>
-
 <p class="price">₹25/kg</p>
-
 <input type="number" id="onion" class="qty" value="1">
-
 <button onclick="addToCart('Onion',25,'onion')">Add</button>
-
 </div>
 
 <div class="card">
-
 <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Carrots.jpg">
-
 <h3>Carrot</h3>
-
 <p class="price">₹35/kg</p>
-
 <input type="number" id="carrot" class="qty" value="1">
-
 <button onclick="addToCart('Carrot',35,'carrot')">Add</button>
-
 </div>
 
 <div class="card">
-
 <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Cabbage_and_cross_section_on_white.jpg">
-
 <h3>Cabbage</h3>
-
 <p class="price">₹20</p>
-
 <input type="number" id="cabbage" class="qty" value="1">
-
 <button onclick="addToCart('Cabbage',20,'cabbage')">Add</button>
-
 </div>
 
 <div class="card">
-
 <img src="https://upload.wikimedia.org/wikipedia/commons/2/28/Green_capsicum.jpg">
-
 <h3>Capsicum</h3>
-
 <p class="price">₹45/kg</p>
-
 <input type="number" id="capsicum" class="qty" value="1">
-
 <button onclick="addToCart('Capsicum',45,'capsicum')">Add</button>
-
 </div>
 
 <div class="card">
-
 <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Green_Chili.jpg">
-
 <h3>Green Chilli</h3>
-
 <p class="price">₹50/kg</p>
-
 <input type="number" id="chilli" class="qty" value="1">
-
 <button onclick="addToCart('Green Chilli',50,'chilli')">Add</button>
-
 </div>
 
 <div class="card">
-
 <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Cucumber.jpg">
-
 <h3>Cucumber</h3>
-
 <p class="price">₹30/kg</p>
-
 <input type="number" id="cucumber" class="qty" value="1">
-
 <button onclick="addToCart('Cucumber',30,'cucumber')">Add</button>
-
 </div>
 
 <div class="card">
-
 <img src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Table_grapes_on_white.jpg">
-
 <h3>Grapes</h3>
-
 <p class="price">₹60/kg</p>
-
 <input type="number" id="grapes" class="qty" value="1">
-
 <button onclick="addToCart('Grapes',60,'grapes')">Add</button>
-
 </div>
 
+<div class="card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/1/15/Red_Apple.jpg">
+<h3>Apple</h3>
+<p class="price">₹120/kg</p>
+<input type="number" id="apple" class="qty" value="1">
+<button onclick="addToCart('Apple',120,'apple')">Add</button>
+</div>
+
+<div class="card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Banana-Single.jpg">
+<h3>Banana</h3>
+<p class="price">₹40/dozen</p>
+<input type="number" id="banana" class="qty" value="1">
+<button onclick="addToCart('Banana',40,'banana')">Add</button>
 </div>
 
 </div>
@@ -347,17 +276,12 @@ Cart: <span id="cart-count">0</span>
 <h2>Checkout</h2>
 
 <input type="text" id="name" placeholder="Your Name">
-
 <input type="text" id="address" placeholder="Delivery Address">
 
 <select id="slot">
-
 <option>Morning (7-10 AM)</option>
-
 <option>Afternoon (12-3 PM)</option>
-
 <option>Evening (5-8 PM)</option>
-
 </select>
 
 <button onclick="order()">Order on WhatsApp</button>
@@ -367,52 +291,47 @@ Cart: <span id="cart-count">0</span>
 <footer>
 
 <p>Hire Farms | Nashik, Maharashtra</p>
-
 <p>Contact: +91 7796722777</p>
 
 </footer>
 
 <script>
 
-let cart = [];
-let count = 0;
-let total = 0;
+let cart=[]
+let count=0
+let total=0
 
-function addToCart(product,price,qtyId){
+function addToCart(product,price,id){
 
-let qty = document.getElementById(qtyId).value;
+let qty=document.getElementById(id).value
 
-cart.push(product+" x"+qty);
+cart.push(product+" x"+qty)
 
-count += parseInt(qty);
+count+=parseInt(qty)
 
-total += price * qty;
+total+=price*qty
 
-document.getElementById("cart-count").innerText = count;
+document.getElementById("cart-count").innerText=count
 
 }
 
 function order(){
 
-let name = document.getElementById("name").value;
+let name=document.getElementById("name").value
+let address=document.getElementById("address").value
+let slot=document.getElementById("slot").value
 
-let address = document.getElementById("address").value;
+let msg="Order from Hire Farms%0A"
 
-let slot = document.getElementById("slot").value;
+msg+="Name:"+name+"%0A"
+msg+="Address:"+address+"%0A"
+msg+="Slot:"+slot+"%0A"
 
-let message = "Order from Hire Farms%0A";
+msg+="Items:%0A"+cart.join("%0A")
 
-message += "Name: "+name+"%0A";
+msg+="%0ATotal: ₹"+total
 
-message += "Address: "+address+"%0A";
-
-message += "Delivery Slot: "+slot+"%0A";
-
-message += "Items:%0A"+cart.join("%0A");
-
-message += "%0ATotal: ₹"+total;
-
-window.open("https://wa.me/917796722777?text="+message);
+window.open("https://wa.me/917796722777?text="+msg)
 
 }
 
