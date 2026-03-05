@@ -2,117 +2,117 @@
 
 <html>
 <head>
-<title>Hire Farms - Fresh Farm Products</title>
+
+<title>Hire Farms - Fresh Farm Store</title>
 
 <style>
 
 body{
-font-family: Arial, sans-serif;
 margin:0;
-background:#f4f4f4;
+font-family:Arial;
+background:#f5f5f5;
 }
+
+/* HEADER */
 
 header{
 background:#2e7d32;
 color:white;
-padding:20px;
-text-align:center;
+padding:15px;
+display:flex;
+justify-content:space-between;
+align-items:center;
 }
 
-nav{
-background:#1b5e20;
+.logo{
+font-size:24px;
+font-weight:bold;
+}
+
+.search{
+width:40%;
+}
+
+.search input{
+width:100%;
 padding:10px;
-text-align:center;
+border-radius:5px;
+border:none;
 }
 
-nav a{
-color:white;
-margin:15px;
-text-decoration:none;
-font-size:18px;
+.cart{
+background:#4caf50;
+padding:10px 20px;
+border-radius:5px;
 }
 
-/* Farm Banner */
+/* HERO */
 
-.banner{
+.hero{
 background:url("https://images.unsplash.com/photo-1500595046743-ee36d6fbe0b3");
 background-size:cover;
-background-position:center;
 color:white;
 text-align:center;
-padding:80px 20px;
+padding:120px 20px;
 }
 
-.banner h2{
-font-size:40px;
-margin-bottom:10px;
+.hero h1{
+font-size:48px;
 }
 
-.banner p{
-font-size:20px;
-}
-
-/* Product Section */
-
-.container{
-padding:30px;
-}
+/* PRODUCTS */
 
 .products{
-display:flex;
-gap:20px;
-flex-wrap:wrap;
-justify-content:center;
+padding:40px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
 }
 
-.product{
+.card{
 background:white;
 padding:20px;
-border-radius:10px;
-width:220px;
+border-radius:12px;
+box-shadow:0 4px 12px rgba(0,0,0,0.1);
 text-align:center;
-box-shadow:0 2px 10px rgba(0,0,0,0.1);
 }
 
-.product img{
+.card img{
 width:100%;
 height:150px;
 object-fit:cover;
 border-radius:10px;
 }
 
+.price{
+color:#2e7d32;
+font-weight:bold;
+}
+
 button{
 background:#4caf50;
-color:white;
 border:none;
 padding:10px 15px;
+color:white;
+border-radius:6px;
 cursor:pointer;
-border-radius:5px;
-font-size:15px;
 }
 
-button:hover{
-background:#388e3c;
-}
-
-/* Google Map */
+/* MAP */
 
 .map{
 text-align:center;
 padding:40px;
 }
 
-/* Footer */
+/* FOOTER */
 
 footer{
 background:#2e7d32;
 color:white;
 text-align:center;
-padding:15px;
-margin-top:30px;
+padding:20px;
 }
-
-/* Floating WhatsApp */
 
 .whatsapp{
 position:fixed;
@@ -121,10 +121,8 @@ right:20px;
 background:#25D366;
 color:white;
 padding:15px 20px;
-border-radius:50px;
+border-radius:40px;
 text-decoration:none;
-font-weight:bold;
-box-shadow:0 2px 10px rgba(0,0,0,0.3);
 }
 
 </style>
@@ -134,61 +132,50 @@ box-shadow:0 2px 10px rgba(0,0,0,0.3);
 <body>
 
 <header>
-<h1>Hire Farms 🌾</h1>
-<p>Fresh Agricultural Products Direct From Our Farm</p>
+
+<div class="logo">Hire Farms 🌾</div>
+
+<div class="search">
+<input type="text" placeholder="Search vegetables, fruits...">
+</div>
+
+<div class="cart">🛒 Cart</div>
+
 </header>
 
-<nav>
-<a href="#">Home</a>
-<a href="#">Products</a>
-<a href="#">Contact</a>
-</nav>
+<section class="hero">
 
-<!-- Farm Banner -->
+<h1>Fresh From Hire Farms</h1>
+<p>Farm Fresh Vegetables Delivered To Your Home</p>
 
-<section class="banner">
-<h2>Fresh From Hire Farms</h2>
-<p>Farm Fresh Vegetables and Fruits Direct to Your Home</p>
 </section>
 
-<div class="container">
-
-<h2 style="text-align:center;">Our Products</h2>
+<h2 style="text-align:center">Our Products</h2>
 
 <div class="products">
 
-<div class="product">
+<div class="card">
 <img src="https://upload.wikimedia.org/wikipedia/commons/8/88/Bright_red_tomato_and_cross_section02.jpg">
 <h3>Tomatoes</h3>
-<p>₹30 / kg</p>
-<a href="https://wa.me/917796722777?text=Hello%20I%20want%20to%20order%20Tomatoes%20from%20Hire%20Farms">
-<button>Order Now</button>
-</a>
+<p class="price">₹30 / kg</p>
+<button>Add to Cart</button>
 </div>
 
-<div class="product">
-<img src="https://images.unsplash.com/photo-1582515073490-dc6e2c1c91b3">
+<div class="card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/1/15/Red_onion.jpg">
 <h3>Onions</h3>
-<p>₹25 / kg</p>
-<a href="https://wa.me/917796722777?text=Hello%20I%20want%20to%20order%20Onions%20from%20Hire%20Farms">
-<button>Order Now</button>
-</a>
+<p class="price">₹25 / kg</p>
+<button>Add to Cart</button>
 </div>
 
-<div class="product">
+<div class="card">
 <img src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Table_grapes_on_white.jpg">
 <h3>Grapes</h3>
-<p>₹60 / kg</p>
-<a href="https://wa.me/917796722777?text=Hello%20I%20want%20to%20order%20Grapes%20from%20Hire%20Farms">
-<button>Order Now</button>
-</a>
+<p class="price">₹60 / kg</p>
+<button>Add to Cart</button>
 </div>
 
 </div>
-
-</div>
-
-<!-- Google Map -->
 
 <div class="map">
 
@@ -206,13 +193,14 @@ src="https://maps.google.com/maps?q=Nashik&t=&z=13&ie=UTF8&iwloc=&output=embed">
 </div>
 
 <footer>
+
 <p>Hire Farms | Nashik, Maharashtra</p>
 <p>Contact: +91 7796722777</p>
-</footer>
 
-<!-- Floating WhatsApp Button -->
+</footer>
 
 <a href="https://wa.me/917796722777" class="whatsapp">WhatsApp Order</a>
 
 </body>
+
 </html>
